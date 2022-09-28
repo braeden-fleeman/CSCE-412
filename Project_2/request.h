@@ -1,7 +1,13 @@
+#include<string>
+using std::string;
+
 class Request {
 private:
-    /* data */
+    string ip_in;
+    string ip_out;
+    int requestTime;
 public:
-    Request(/* args */);
-    ~Request();
+    Request();
+    int getRequestTime();
+    string getIP(string ipType);
 };

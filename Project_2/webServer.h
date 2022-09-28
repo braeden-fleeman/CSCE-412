@@ -2,10 +2,6 @@ class WebServer {
 private:
     /* data */
 public:
-    WebServer(/* args */);
-    ~WebServer();
+    WebServer();
 };
 
-struct requestQueue {
-    /* data */
-};
