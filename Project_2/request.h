@@ -5,7 +5,7 @@ class Request {
 private:
     string ip_in;
     string ip_out;
-    int requestTime;
+    int requestTime; // in milliseconds
 public:
     Request();
     int getRequestTime();
