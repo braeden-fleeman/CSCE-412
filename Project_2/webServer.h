@@ -1,9 +1,18 @@
+#include <queue>
 #include "request.h"
+using namespace std;
 
 class WebServer {
 private:
+    Request currentJob;
+    int jobExecutionTime;
+    int jobStartTime;
+    string serverName;
+
 public:
-    WebServer();
-    int executeJob(Request req);
+    WebServer(string name);
+    void executeJob(Request request, int curent_time);
+    bool isServerBusy(int current_time);
+    string getJobLog(int current_time);
 };
 

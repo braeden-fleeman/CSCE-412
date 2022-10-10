@@ -1,15 +1,15 @@
-#include <chrono>
-#include <iostream>
 #include <queue>
-#include "webServer.h"
+#include "request.h"
 
 using namespace std;
 
 class LoadBalancer {
 private:
     queue<Request> requestQueue;
+    int current_time;
 public:
-    LoadBalancer(/* args */);
+    LoadBalancer();
     void loadRequestQueue(int numRequests);
-    Request giveRequest(WebServer server);
+    Request giveRequest();
+    void runLoadBalancer(int runTime);
 };

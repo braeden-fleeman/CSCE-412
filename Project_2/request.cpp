@@ -11,7 +11,7 @@ string rand_IP() {
     return ip;
 }
 
-Request::Request() : ip_in(rand_IP()), ip_out(rand_IP()), requestTime(1 + (rand() % 100000)) {
+Request::Request(): ip_in(rand_IP()), ip_out(rand_IP()), requestTime(1 + (rand() % 1000)) {
 }
 
 string Request::getIP(string ipType) {
