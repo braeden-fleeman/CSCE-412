@@ -1,5 +1,8 @@
+#ifndef REQUEST
+#define REQUEST
+
 #include<string>
-using std::string;
+using namespace std;
 
 class Request {
 private:
@@ -11,3 +14,5 @@ public:
     int getRequestTime();
     string getIP(string ipType);
 };
+
+#endif

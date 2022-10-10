@@ -1,3 +1,6 @@
+#ifndef WEBSERVER
+#define WEBSERVER
+
 #include <queue>
 #include "request.h"
 using namespace std;
@@ -12,7 +15,9 @@ private:
 public:
     WebServer(string name);
     void executeJob(Request request, int curent_time);
-    bool isServerBusy(int current_time);
     string getJobLog(int current_time);
+    bool isServerBusy(int current_time);
+
 };
 
+#endif

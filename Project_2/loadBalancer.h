@@ -1,15 +1,23 @@
+#ifndef LOADBALANCER
+#define LOADBALANCER
+
 #include <queue>
 #include "request.h"
+#include "webServer.h"
 
 using namespace std;
 
 class LoadBalancer {
 private:
-    queue<Request> requestQueue;
     int current_time;
+    int num_servers;
+    queue<Request> requestQueue;
+    vector<WebServer> serverList;
 public:
-    LoadBalancer();
-    void loadRequestQueue(int numRequests);
-    Request giveRequest();
+    LoadBalancer(int numRequests, int numServers);
+    void checkServers();
+    void giveServerJob(WebServer& server);
     void runLoadBalancer(int runTime);
 };
+
+#endif

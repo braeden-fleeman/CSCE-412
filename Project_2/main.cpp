@@ -1,6 +1,8 @@
 #include <chrono>
 #include <iostream>
 #include "webServer.h"
+#include "loadBalancer.h"
+
 using namespace std;
 using std::chrono::high_resolution_clock, std::chrono::duration_cast;
 
@@ -21,8 +23,7 @@ int main() {
     srand(time(NULL));
 
     /* Execute Load Balancing */
-    // Load Queue
+    LoadBalancer balancer(numRequests, numServers);
 
-    // Run Balancer
-    // auto startTime = high_resolution_clock::now();
+    balancer.runLoadBalancer(executionTime);
 }
