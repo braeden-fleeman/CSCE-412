@@ -3,6 +3,7 @@
 WebServer::WebServer(string name): currentJob(), jobExecutionTime(0), jobStartTime(0), serverName(name) {}
 
 void WebServer::executeJob(Request req, int current_time) {
+    // Store job info for "execution"
     jobExecutionTime = req.getRequestTime();
     jobStartTime = current_time;
     currentJob = req;
