@@ -45,7 +45,7 @@ void LoadBalancer::runLoadBalancer(int runTime) {
     output << "Number of New Tasks Possibly Added: 1 to 2 * number of servers" << endl;
 
     // List range for task times
-    output << "Task Time Range: 1 to 1000 cycles\n" << endl;
+    output << "Task Time Range: 1 to 1000 clock cycles\n" << endl;
 
     // Assign initial jobs
     output << "Start of Load Balancer Log:" << endl;
