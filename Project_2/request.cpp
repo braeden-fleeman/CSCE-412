@@ -24,4 +24,6 @@ int Request::getRequestTime() {
 
 void Request::makeBadRequest() {
     requestTime = -1;
+    ip_in = "-1";
+    ip_out = "-1";
 }

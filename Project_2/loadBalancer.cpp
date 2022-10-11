@@ -29,6 +29,8 @@ void LoadBalancer::checkServers(ofstream& outputWriter) {
         if (!serverList.at(i).isServerBusy(current_time) && !serverList.at(i).isBadReq()) {
             outputWriter << serverList.at(i).getJobLog(current_time) << endl;
             giveServerJob(serverList.at(i));
+        } else if (serverList.at(i).isBadReq()) {
+            giveServerJob(serverList.at(i));
         }
 
         current_time++;
@@ -76,6 +78,8 @@ void LoadBalancer::runLoadBalancer(int runTime) {
                 // if Server is not busy print log and assign new job
                 if (!serverList.at(i).isServerBusy(current_time) && !serverList.at(i).isBadReq()) {
                     output << serverList.at(i).getJobLog(current_time) << endl;
+                }
+                if (serverList.at(i).isBadReq()) {
                     doneServers++;
                 }
                 current_time++;
