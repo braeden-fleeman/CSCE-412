@@ -1,0 +1,141 @@
+\hypertarget{classRequest}{}\doxysection{Request Class Reference}
+\label{classRequest}\index{Request@{Request}}
+
+
+The Mock \mbox{\hyperlink{classRequest}{Request}} Object.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classRequest}{Request}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRequest_a813077f3f0fcd99e595d0277fa40e243}{get\+Request\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Returns the request\+Time data member. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classRequest_a57ddf419e4b7435038d308b764d692ef}{get\+IP}} (string ip\+Type)
+\begin{DoxyCompactList}\small\item\em Retrieves the in or out IP based on input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRequest_a40e4f4a1f77ef5ab052ce926441d38c5}{make\+Bad\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Turns the request object into a Bad \mbox{\hyperlink{classRequest}{Request}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classRequest_a771714f7980f0f623434cc00c318007d}{rand\+\_\+\+IP}} ()
+\begin{DoxyCompactList}\small\item\em This function randomly generates an I\+Pv4 address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}{ip\+\_\+in}}
+\begin{DoxyCompactList}\small\item\em Represents incoming IP Address (Randomized) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classRequest_ae3394ea2aa8654ec22bc87083a8d3bda}{ip\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Represents outgoing IP Address (Randomized) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRequest_a12ba8b6c1b2d3a0b5df599fb0067256b}{request\+Time}}
+\begin{DoxyCompactList}\small\item\em Time request takes to be processed in clock cycles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Mock \mbox{\hyperlink{classRequest}{Request}} Object. 
+
+This class contains the request object that is to be used by the \mbox{\hyperlink{classWebServer}{Web\+Server}} and \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} classes 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRequest_afaf8d8928de7ffff8a3767589489bd33}\label{classRequest_afaf8d8928de7ffff8a3767589489bd33}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classRequest}{Request}}. 
+
+Randomly generates the I\+Ps. The request time is also randomly set between 1 and 1000 cycles 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequest_a57ddf419e4b7435038d308b764d692ef}\label{classRequest_a57ddf419e4b7435038d308b764d692ef}} 
+\index{Request@{Request}!getIP@{getIP}}
+\index{getIP@{getIP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIP()}{getIP()}}
+{\footnotesize\ttfamily string Request\+::get\+IP (\begin{DoxyParamCaption}\item[{string}]{ip\+Type }\end{DoxyParamCaption})}
+
+
+
+Retrieves the in or out IP based on input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+Type} & can be IN or O\+UT. Returns respective IP \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequest_a813077f3f0fcd99e595d0277fa40e243}\label{classRequest_a813077f3f0fcd99e595d0277fa40e243}} 
+\index{Request@{Request}!getRequestTime@{getRequestTime}}
+\index{getRequestTime@{getRequestTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getRequestTime()}{getRequestTime()}}
+{\footnotesize\ttfamily int Request\+::get\+Request\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the request\+Time data member. 
+
+\mbox{\Hypertarget{classRequest_a40e4f4a1f77ef5ab052ce926441d38c5}\label{classRequest_a40e4f4a1f77ef5ab052ce926441d38c5}} 
+\index{Request@{Request}!makeBadRequest@{makeBadRequest}}
+\index{makeBadRequest@{makeBadRequest}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{makeBadRequest()}{makeBadRequest()}}
+{\footnotesize\ttfamily void Request\+::make\+Bad\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Turns the request object into a Bad \mbox{\hyperlink{classRequest}{Request}}. 
+
+\mbox{\Hypertarget{classRequest_a771714f7980f0f623434cc00c318007d}\label{classRequest_a771714f7980f0f623434cc00c318007d}} 
+\index{Request@{Request}!rand\_IP@{rand\_IP}}
+\index{rand\_IP@{rand\_IP}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{rand\_IP()}{rand\_IP()}}
+{\footnotesize\ttfamily string Request\+::rand\+\_\+\+IP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This function randomly generates an I\+Pv4 address. 
+
+Used in \mbox{\hyperlink{classRequest}{Request}} constructor 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}\label{classRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}} 
+\index{Request@{Request}!ip\_in@{ip\_in}}
+\index{ip\_in@{ip\_in}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_in}{ip\_in}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Represents incoming IP Address (Randomized) 
+
+\mbox{\Hypertarget{classRequest_ae3394ea2aa8654ec22bc87083a8d3bda}\label{classRequest_ae3394ea2aa8654ec22bc87083a8d3bda}} 
+\index{Request@{Request}!ip\_out@{ip\_out}}
+\index{ip\_out@{ip\_out}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_out}{ip\_out}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+out\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Represents outgoing IP Address (Randomized) 
+
+\mbox{\Hypertarget{classRequest_a12ba8b6c1b2d3a0b5df599fb0067256b}\label{classRequest_a12ba8b6c1b2d3a0b5df599fb0067256b}} 
+\index{Request@{Request}!requestTime@{requestTime}}
+\index{requestTime@{requestTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{requestTime}{requestTime}}
+{\footnotesize\ttfamily int Request\+::request\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time request takes to be processed in clock cycles. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{request_8h}{request.\+h}}\item 
+\mbox{\hyperlink{request_8cpp}{request.\+cpp}}\end{DoxyCompactItemize}

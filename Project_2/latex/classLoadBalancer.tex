@@ -1,0 +1,155 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Handles Giving Out Requests.  
+
+
+
+
+{\ttfamily \#include $<$load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_a0617b9be54117f3b53700fc9035fe37e}{Load\+Balancer}} (int num\+Requests, int num\+Servers)
+\begin{DoxyCompactList}\small\item\em Constructor for the Load Balancer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a7b502485ca16c10e3307be16e4266e03}{check\+Servers}} (ofstream \&output\+Writer)
+\begin{DoxyCompactList}\small\item\em Checks to see if a server is busy or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a2fe3a3aa38dac186346ba57ef975a6c1}{give\+Server\+Job}} (\mbox{\hyperlink{classWebServer}{Web\+Server}} \&server)
+\begin{DoxyCompactList}\small\item\em If there is a request in the queue it passes a request to the server If the queue is empty it sends a bad request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ad646b45c32c8bbc6753c1d9973eec91b}{run\+Load\+Balancer}} (int run\+Time)
+\begin{DoxyCompactList}\small\item\em Runs the Load Balancer for x amount of time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classLoadBalancer_a2bfda2caf42a5eb669ce3acdf3401292}{current\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em The current time in the load balancer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLoadBalancer_a2772809034bc2e08f6e59a5083495969}{num\+\_\+servers}}
+\begin{DoxyCompactList}\small\item\em The number of servers to be made. \end{DoxyCompactList}\item 
+queue$<$ \mbox{\hyperlink{classRequest}{Request}} $>$ \mbox{\hyperlink{classLoadBalancer_a615bae2d6a1e48d5f4e3de93e5c3ef73}{request\+Queue}}
+\begin{DoxyCompactList}\small\item\em Queue that holds requests to be processed. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classWebServer}{Web\+Server}} $>$ \mbox{\hyperlink{classLoadBalancer_a3d68ba121c6b12f94f95264d06fe0609}{server\+List}}
+\begin{DoxyCompactList}\small\item\em List of all the servers in the load balancer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles Giving Out Requests. 
+
+The Load Balancer has three responsibilities, giving out requests to servers, keeping track of the time, and generating requests. After initial request generation it will randomly generate requests with a 1/35 chance every 10 cycles. The number of new request that can be added is 1 to 2$\ast$(\# of servers). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a0617b9be54117f3b53700fc9035fe37e}\label{classLoadBalancer_a0617b9be54117f3b53700fc9035fe37e}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{num\+Requests,  }\item[{int}]{num\+Servers }\end{DoxyParamCaption})}
+
+
+
+Constructor for the Load Balancer. 
+
+Handles server creation and initial queue loading. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Requests} & The number of initial requests to create \\
+\hline
+{\em num\+Servers} & The number of servers to be created \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a7b502485ca16c10e3307be16e4266e03}\label{classLoadBalancer_a7b502485ca16c10e3307be16e4266e03}} 
+\index{LoadBalancer@{LoadBalancer}!checkServers@{checkServers}}
+\index{checkServers@{checkServers}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{checkServers()}{checkServers()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::check\+Servers (\begin{DoxyParamCaption}\item[{ofstream \&}]{output\+Writer }\end{DoxyParamCaption})}
+
+
+
+Checks to see if a server is busy or not. 
+
+If it isn\textquotesingle{}t it writes to the log and then assigns the server a new job. 
+\begin{DoxyParams}{Parameters}
+{\em output\+Writer} & The ofstream to write to the log file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a2fe3a3aa38dac186346ba57ef975a6c1}\label{classLoadBalancer_a2fe3a3aa38dac186346ba57ef975a6c1}} 
+\index{LoadBalancer@{LoadBalancer}!giveServerJob@{giveServerJob}}
+\index{giveServerJob@{giveServerJob}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{giveServerJob()}{giveServerJob()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::give\+Server\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classWebServer}{Web\+Server}} \&}]{server }\end{DoxyParamCaption})}
+
+
+
+If there is a request in the queue it passes a request to the server If the queue is empty it sends a bad request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & The webserver to send the request to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_ad646b45c32c8bbc6753c1d9973eec91b}\label{classLoadBalancer_ad646b45c32c8bbc6753c1d9973eec91b}} 
+\index{LoadBalancer@{LoadBalancer}!runLoadBalancer@{runLoadBalancer}}
+\index{runLoadBalancer@{runLoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{runLoadBalancer()}{runLoadBalancer()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::run\+Load\+Balancer (\begin{DoxyParamCaption}\item[{int}]{run\+Time }\end{DoxyParamCaption})}
+
+
+
+Runs the Load Balancer for x amount of time. 
+
+It also checks for when servers are busy or not. If all servers are not busy and the queue is empty it will exit early. 
+\begin{DoxyParams}{Parameters}
+{\em run\+Time} & The amount of time the load balancer will run for \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a2bfda2caf42a5eb669ce3acdf3401292}\label{classLoadBalancer_a2bfda2caf42a5eb669ce3acdf3401292}} 
+\index{LoadBalancer@{LoadBalancer}!current\_time@{current\_time}}
+\index{current\_time@{current\_time}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{current\_time}{current\_time}}
+{\footnotesize\ttfamily int Load\+Balancer\+::current\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current time in the load balancer. 
+
+\mbox{\Hypertarget{classLoadBalancer_a2772809034bc2e08f6e59a5083495969}\label{classLoadBalancer_a2772809034bc2e08f6e59a5083495969}} 
+\index{LoadBalancer@{LoadBalancer}!num\_servers@{num\_servers}}
+\index{num\_servers@{num\_servers}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{num\_servers}{num\_servers}}
+{\footnotesize\ttfamily int Load\+Balancer\+::num\+\_\+servers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of servers to be made. 
+
+Provided by user \mbox{\Hypertarget{classLoadBalancer_a615bae2d6a1e48d5f4e3de93e5c3ef73}\label{classLoadBalancer_a615bae2d6a1e48d5f4e3de93e5c3ef73}} 
+\index{LoadBalancer@{LoadBalancer}!requestQueue@{requestQueue}}
+\index{requestQueue@{requestQueue}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{requestQueue}{requestQueue}}
+{\footnotesize\ttfamily queue$<$\mbox{\hyperlink{classRequest}{Request}}$>$ Load\+Balancer\+::request\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Queue that holds requests to be processed. 
+
+\mbox{\Hypertarget{classLoadBalancer_a3d68ba121c6b12f94f95264d06fe0609}\label{classLoadBalancer_a3d68ba121c6b12f94f95264d06fe0609}} 
+\index{LoadBalancer@{LoadBalancer}!serverList@{serverList}}
+\index{serverList@{serverList}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{serverList}{serverList}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classWebServer}{Web\+Server}}$>$ Load\+Balancer\+::server\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of all the servers in the load balancer. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadBalancer_8h}{load\+Balancer.\+h}}\item 
+\mbox{\hyperlink{loadBalancer_8cpp}{load\+Balancer.\+cpp}}\end{DoxyCompactItemize}

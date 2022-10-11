@@ -2,6 +2,12 @@
 #include <fstream>
 #include "loadBalancer.h"
 
+/**
+ * Constructor for the Load Balancer.
+ * Handles server creation and initial queue loading.
+ * @param numRequests The number of initial requests to create
+ * @param numServers The number of servers to be created
+*/
 LoadBalancer::LoadBalancer(int numRequests, int numServers):
     current_time(0), num_servers(numServers), requestQueue(queue<Request>::container_type(numRequests)), serverList() {
     // Create Servers
@@ -12,6 +18,11 @@ LoadBalancer::LoadBalancer(int numRequests, int numServers):
     }
 }
 
+/**
+ * If there is a request in the queue it passes a request to the server
+ * If the queue is empty it sends a bad request
+ * @param server The webserver to send the request to
+*/
 void LoadBalancer::giveServerJob(WebServer& server) {
     Request badReq;
     badReq.makeBadRequest();
@@ -23,6 +34,11 @@ void LoadBalancer::giveServerJob(WebServer& server) {
     }
 }
 
+/**
+ * Checks to see if a server is busy or not. If it isn't it writes to the log
+ * and then assigns the server a new job.
+ * @param outputWriter The ofstream to write to the log file
+*/
 void LoadBalancer::checkServers(ofstream& outputWriter) {
     for (int i = 0; i < num_servers; i++) {
         // if Server is not busy print log and assign new job
@@ -37,6 +53,12 @@ void LoadBalancer::checkServers(ofstream& outputWriter) {
     }
 }
 
+/**
+ * Runs the Load Balancer for x amount of time. It also checks
+ * for when servers are busy or not. If all servers are not busy
+ * and the queue is empty it will exit early.
+ * @param runTime The amount of time the load balancer will run for
+*/
 void LoadBalancer::runLoadBalancer(int runTime) {
     // Create file
     ofstream output("LoadBalancerLogs.txt");

@@ -1,0 +1,171 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+\char`\"{}\+Processes\char`\"{} \mbox{\hyperlink{classRequest}{Request}} Objects.  
+
+
+
+
+{\ttfamily \#include $<$web\+Server.\+h$>$}
+
+
+
+Collaboration diagram for Web\+Server\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer_ae5fc86ccf95ac51d53d55bd2641c6ca7}{Web\+Server}} (string name)
+\begin{DoxyCompactList}\small\item\em Constructor for the webserver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_abff4c4b3065fff48511fb83188c76938}{execute\+Job}} (\mbox{\hyperlink{classRequest}{Request}} request, int curent\+\_\+time)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Executes\char`\"{} the request by storing the request, job start time, and the request processing time \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classWebServer_ac05c339c3edaa0cab9f14cc1909cce00}{get\+Job\+Log}} (int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Returns a log with the current\+\_\+time and the IP addresses of the request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_acc33b1e8b088da0b2afc94419cd22d27}{is\+Server\+Busy}} (int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Checks to see if the server is still \char`\"{}processing\char`\"{} a request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_ae2700c83b792b4a4aa126ecc798d76e6}{is\+Bad\+Req}} ()
+\begin{DoxyCompactList}\small\item\em Checks to see if the request the server was given is a bad request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest}{Request}} \mbox{\hyperlink{classWebServer_afb18abafa58179d2eaab2617cdd2f518}{current\+Job}}
+\begin{DoxyCompactList}\small\item\em The current job the server is working on. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebServer_a0f2980e4022573e1f3b13a22ed37b669}{job\+Execution\+Time}}
+\begin{DoxyCompactList}\small\item\em How long the server should take to process the request. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebServer_a5ffb57d8a3ead57af79159be3d562c54}{job\+Start\+Time}}
+\begin{DoxyCompactList}\small\item\em What time the server was given the job at. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classWebServer_ae46beb8f7c04a03a74ef507109417fe5}{server\+Name}}
+\begin{DoxyCompactList}\small\item\em The name of the server for logging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\char`\"{}\+Processes\char`\"{} \mbox{\hyperlink{classRequest}{Request}} Objects. 
+
+The \mbox{\hyperlink{classWebServer}{Web\+Server}} class mimics processing \mbox{\hyperlink{classRequest}{Request}} objects. Stores the request data and returns a log saying processed after enough time has passed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_ae5fc86ccf95ac51d53d55bd2641c6ca7}\label{classWebServer_ae5fc86ccf95ac51d53d55bd2641c6ca7}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor for the webserver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name for the server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_abff4c4b3065fff48511fb83188c76938}\label{classWebServer_abff4c4b3065fff48511fb83188c76938}} 
+\index{WebServer@{WebServer}!executeJob@{executeJob}}
+\index{executeJob@{executeJob}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{executeJob()}{executeJob()}}
+{\footnotesize\ttfamily void Web\+Server\+::execute\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRequest}{Request}}}]{req,  }\item[{int}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+\char`\"{}\+Executes\char`\"{} the request by storing the request, job start time, and the request processing time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request being passed to the server \\
+\hline
+{\em current\+\_\+time} & The time at which the job was given to the server \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_ac05c339c3edaa0cab9f14cc1909cce00}\label{classWebServer_ac05c339c3edaa0cab9f14cc1909cce00}} 
+\index{WebServer@{WebServer}!getJobLog@{getJobLog}}
+\index{getJobLog@{getJobLog}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getJobLog()}{getJobLog()}}
+{\footnotesize\ttfamily string Web\+Server\+::get\+Job\+Log (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Returns a log with the current\+\_\+time and the IP addresses of the request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & is the time at which the log is created \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_ae2700c83b792b4a4aa126ecc798d76e6}\label{classWebServer_ae2700c83b792b4a4aa126ecc798d76e6}} 
+\index{WebServer@{WebServer}!isBadReq@{isBadReq}}
+\index{isBadReq@{isBadReq}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isBadReq()}{isBadReq()}}
+{\footnotesize\ttfamily bool Web\+Server\+::is\+Bad\+Req (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks to see if the request the server was given is a bad request. 
+
+\mbox{\Hypertarget{classWebServer_acc33b1e8b088da0b2afc94419cd22d27}\label{classWebServer_acc33b1e8b088da0b2afc94419cd22d27}} 
+\index{WebServer@{WebServer}!isServerBusy@{isServerBusy}}
+\index{isServerBusy@{isServerBusy}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isServerBusy()}{isServerBusy()}}
+{\footnotesize\ttfamily bool Web\+Server\+::is\+Server\+Busy (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Checks to see if the server is still \char`\"{}processing\char`\"{} a request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & current time to see if enough time has passed for processing to be done \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWebServer_afb18abafa58179d2eaab2617cdd2f518}\label{classWebServer_afb18abafa58179d2eaab2617cdd2f518}} 
+\index{WebServer@{WebServer}!currentJob@{currentJob}}
+\index{currentJob@{currentJob}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{currentJob}{currentJob}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRequest}{Request}} Web\+Server\+::current\+Job\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current job the server is working on. 
+
+\mbox{\Hypertarget{classWebServer_a0f2980e4022573e1f3b13a22ed37b669}\label{classWebServer_a0f2980e4022573e1f3b13a22ed37b669}} 
+\index{WebServer@{WebServer}!jobExecutionTime@{jobExecutionTime}}
+\index{jobExecutionTime@{jobExecutionTime}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{jobExecutionTime}{jobExecutionTime}}
+{\footnotesize\ttfamily int Web\+Server\+::job\+Execution\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+How long the server should take to process the request. 
+
+\mbox{\Hypertarget{classWebServer_a5ffb57d8a3ead57af79159be3d562c54}\label{classWebServer_a5ffb57d8a3ead57af79159be3d562c54}} 
+\index{WebServer@{WebServer}!jobStartTime@{jobStartTime}}
+\index{jobStartTime@{jobStartTime}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{jobStartTime}{jobStartTime}}
+{\footnotesize\ttfamily int Web\+Server\+::job\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+What time the server was given the job at. 
+
+\mbox{\Hypertarget{classWebServer_ae46beb8f7c04a03a74ef507109417fe5}\label{classWebServer_ae46beb8f7c04a03a74ef507109417fe5}} 
+\index{WebServer@{WebServer}!serverName@{serverName}}
+\index{serverName@{serverName}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{serverName}{serverName}}
+{\footnotesize\ttfamily string Web\+Server\+::server\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name of the server for logging purposes. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{webServer_8h}{web\+Server.\+h}}\item 
+\mbox{\hyperlink{webServer_8cpp}{web\+Server.\+cpp}}\end{DoxyCompactItemize}

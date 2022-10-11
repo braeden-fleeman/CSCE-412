@@ -4,7 +4,10 @@
 #include "loadBalancer.h"
 
 using namespace std;
-
+/**
+ * Main function for the program.
+ * Gets user inout and starts the load balancer
+*/
 int main() {
     /* Get execution parameters from user */
     int executionTime;
