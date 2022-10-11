@@ -21,3 +21,7 @@ string Request::getIP(string ipType) {
 int Request::getRequestTime() {
     return requestTime;
 }
+
+void Request::makeBadRequest() {
+    requestTime = -1;
+}

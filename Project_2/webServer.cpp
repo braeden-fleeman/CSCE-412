@@ -15,6 +15,10 @@ string WebServer::getJobLog(int current_time) {
     return log;
 }
 
+bool WebServer::isBadReq() {
+    return jobExecutionTime == -1;
+}
+
 bool WebServer::isServerBusy(int current_time) {
     // See if job is still "executing"
     return jobExecutionTime + jobStartTime > current_time;

@@ -17,6 +17,7 @@ public:
     void executeJob(Request request, int curent_time);
     string getJobLog(int current_time);
     bool isServerBusy(int current_time);
+    bool isBadReq();
 
 };
 

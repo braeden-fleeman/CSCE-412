@@ -13,6 +13,7 @@ public:
     Request();
     int getRequestTime();
     string getIP(string ipType);
+    void makeBadRequest();
 };
 
 #endif

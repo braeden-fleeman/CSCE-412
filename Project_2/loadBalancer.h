@@ -15,7 +15,7 @@ private:
     vector<WebServer> serverList;
 public:
     LoadBalancer(int numRequests, int numServers);
-    void checkServers();
+    void checkServers(ofstream& outputWriter);
     void giveServerJob(WebServer& server);
     void runLoadBalancer(int runTime);
 };
