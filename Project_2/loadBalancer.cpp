@@ -109,7 +109,7 @@ void LoadBalancer::runLoadBalancer(int runTime) {
             }
 
             // exit load balancer if both are true
-            if (doneServers == 10) {
+            if (doneServers == num_servers) {
                 output << "All jobs finished at " << current_time << endl;
                 break;
             }
