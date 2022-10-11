@@ -18,7 +18,7 @@ void LoadBalancer::giveServerJob(WebServer& server) {
     if (!requestQueue.empty()) {
         server.executeJob(requestQueue.front(), current_time);
         requestQueue.pop();
-    } else {
+    } else if (!server.isBadReq()) {
         server.executeJob(badReq, -1);
     }
 }
@@ -75,9 +75,10 @@ void LoadBalancer::runLoadBalancer(int runTime) {
             // see if all servers done
             int doneServers = 0;
             for (int i = 0; i < num_servers; i++) {
-                // if Server is not busy print log and assign new job
+                // if Server is not busy print log
                 if (!serverList.at(i).isServerBusy(current_time) && !serverList.at(i).isBadReq()) {
                     output << serverList.at(i).getJobLog(current_time) << endl;
+                    giveServerJob(serverList.at(i));
                 }
                 if (serverList.at(i).isBadReq()) {
                     doneServers++;
