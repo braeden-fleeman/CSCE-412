@@ -12,8 +12,8 @@ To see each class and its functions please check the classes tab.
 
 ## Execution: 
 To run this program run ./loadBal and then enter the
-number of cloack cycles you'd like the load balancer to run and then
-the number of servers you'd like to have. Program will then run and
-create the log file.
+number of cloack cycles you'd like the load balancer to run, the
+the number of servers you'd like to have, and how many initial requests to create. 
+Program will then run and create the log file.
 
 ### Project Done by: Braeden Fleeman
